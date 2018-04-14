@@ -110,7 +110,7 @@ public class Test_Development_Ability extends BaseTest {
 
 		try {
 
-			return com.essa.framework.BasePage.readExcel("\\src\\main\\resources", "data.xlsx", "供应商");
+			return com.essa.framework.BasePage.readExcel(".//src//main//resources", "data.xlsx", "供应商");
 
 		} catch (Exception e) {
 
