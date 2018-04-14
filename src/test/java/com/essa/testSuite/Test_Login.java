@@ -76,7 +76,7 @@ public class Test_Login {
 		
 		try {
 			
-			return com.essa.framework.BasePage.readExcel(".\\src\\main\\resources", "data.xlsx", "users");
+			return com.essa.framework.BasePage.readExcel("\\src\\main\\resources", "data.xlsx", "users");
 		
 		} catch (Exception e) {
 			

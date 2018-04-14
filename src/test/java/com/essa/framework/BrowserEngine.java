@@ -24,7 +24,7 @@ public class BrowserEngine {
           
         Properties p = new Properties();  
         // 加载配置文件  
-        InputStream ips = new FileInputStream(".\\src\\main\\resources\\TestConfig\\config.properties");  
+        InputStream ips = new FileInputStream("\\src\\main\\resources\\TestConfig\\config.properties");  
         p.load(ips);  
           
         Logger.Output(LogType.LogTypeName.INFO, "开始从配置文件中选择浏览器");  
@@ -39,19 +39,19 @@ public class BrowserEngine {
         
     	if(browserName.equalsIgnoreCase("Firefox")){  
         	
-            System.setProperty("webdriver.gecko.driver", ".\\src\\main\\resources\\geckodriver.exe");    
+            System.setProperty("webdriver.gecko.driver", "\\src\\main\\resources\\geckodriver.exe");    
             driver = createFireFoxDriver();  
             Logger.Output(LogType.LogTypeName.INFO, "正在启动FireFox浏览器");  
               
         }
     	else if(browserName.equals("Chrome")){  
-            System.setProperty("webdriver.chrome.driver", ".\\src\\main\\resources\\chromedriver");  
+            System.setProperty("webdriver.chrome.driver", "\\src\\main\\resources\\chromedriver");  
             driver= new ChromeDriver();  
             Logger.Output(LogType.LogTypeName.INFO, "正在启动Chrome浏览器");  
               
         }else if(browserName.equalsIgnoreCase("IE")){  
               
-            System.setProperty("webdriver.ie.driver", ".\\src\\main\resources\\IEDriverServer.exe");  
+            System.setProperty("webdriver.ie.driver", "\\src\\main\resources\\IEDriverServer.exe");  
             driver= new InternetExplorerDriver();  
             Logger.Output(LogType.LogTypeName.INFO, "正在启动IE浏览器");  
         }
