@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="bpms自动化测试">
+	<listeners>
+        <!-- 设置监听，测试完毕后会发送测试报告至qq邮箱 
+		<listener class-name="com.essa.framework.ListenerSuite"/>
+		-->
+	</listeners>
+	
+	<test name="login">
+		<classes>
+		<!-- 选择要执行的测试类 -->
+			<class name="com.essa.testSuite.Test_Login"> 
+			</class>
+		</classes>
+	</test>
+	
+	<!--
+	<test name="编辑综合实力评估">
+		<classes>
+			<class name="com.essa.testSuite.Test_Development_Ability">	
+				<methods>
+					<include name="editDevelopmentAbility"/>	
+					<include name="toSupplierOperationsTrack"/>	 切换到供应商管理菜单 
+				</methods>
+			</class>
+		</classes>
+	</test>
+	-->
+</suite>
+

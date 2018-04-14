@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="bpms自动化测试" duration-ms="44303" started-at="2018-04-10T10:25:13Z" finished-at="2018-04-10T10:25:58Z">
+    <groups>
+    </groups>
+    <test name="login" duration-ms="44303" started-at="2018-04-10T10:25:13Z" finished-at="2018-04-10T10:25:58Z">
+      <class name="com.essa.testSuite.Test_Login">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.essa.testSuite.Test_Login@1b6a447]" name="setUp" is-config="true" duration-ms="14081" started-at="2018-04-10T10:25:13Z" finished-at="2018-04-10T10:25:27Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="login(java.lang.String, java.lang.String)[pri:0, instance:com.essa.testSuite.Test_Login@1b6a447]" name="login" duration-ms="8676" started-at="2018-04-10T10:25:30Z" data-provider="users" finished-at="2018-04-10T10:25:38Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[admin]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[essa123]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method status="PASS" signature="login(java.lang.String, java.lang.String)[pri:0, instance:com.essa.testSuite.Test_Login@1b6a447]" name="login" duration-ms="10933" started-at="2018-04-10T10:25:38Z" data-provider="users" finished-at="2018-04-10T10:25:49Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[linrong]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[essa123]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.essa.testSuite.Test_Login@1b6a447]" name="tearDown" is-config="true" duration-ms="8429" started-at="2018-04-10T10:25:49Z" finished-at="2018-04-10T10:25:58Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.essa.testSuite.Test_Login -->
+    </test> <!-- login -->
+  </suite> <!-- bpms自动化测试 -->
+</testng-results>

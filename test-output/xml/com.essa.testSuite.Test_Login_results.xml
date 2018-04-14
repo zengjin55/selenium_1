@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="µÇÂ¼"
+           tests="2"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="11.344">
+  <properties />
+  
+  
+            <testcase name="login" time="5.201" classname="com.essa.testSuite.Test_Login" />
+                <testcase name="login" time="6.143" classname="com.essa.testSuite.Test_Login" />
+      
+</testsuite>
