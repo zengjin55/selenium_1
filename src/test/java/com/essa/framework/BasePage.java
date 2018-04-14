@@ -261,7 +261,7 @@ public class BasePage {
 	 * 第三个参数为excel的worksheet名
 	 */
 	public static Object[][] readExcel(String filepath, String filename, String SheetName) throws Exception {
-		File file = new File(filepath + "\\" + filename);
+		File file = new File(filepath + "//" + filename);
 		FileInputStream inputStream = new FileInputStream(file);
 		Workbook Workbook = null;
 		// 获取文件扩展名
