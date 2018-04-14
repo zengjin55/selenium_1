@@ -68,7 +68,7 @@ public class Test_Login {
 	
 	/*
 	 * 提供数据对象
-	 * 此方法读取当前项目根目录下的data\\data.xlsx文件中的“users”工作表
+	 * 此方法读取当前项目根目录下的src\\main\\data.xlsx文件中的“users”工作表
 	 */
 	
 	@DataProvider(name="users")
@@ -76,7 +76,7 @@ public class Test_Login {
 		
 		try {
 			
-			return com.essa.framework.BasePage.readExcel("\\src\\main\\resources", "data.xlsx", "users");
+			return com.essa.framework.BasePage.readExcel(".//src//main//resources", "data.xlsx", "users");
 		
 		} catch (Exception e) {
 			
