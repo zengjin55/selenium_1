@@ -9,6 +9,7 @@ import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxProfile;
@@ -37,7 +38,8 @@ public class BrowserEngine {
         ips.close();  
     }  
       
-    public WebDriver getBrowser() throws IOException{  
+    @SuppressWarnings("deprecation")
+	public WebDriver getBrowser() throws IOException{  
         
     	if(browserName.equalsIgnoreCase("Firefox")){  
         	
@@ -67,6 +69,7 @@ public class BrowserEngine {
         	options.setExperimentalOption("prefs", prefs);
         	caps.setJavascriptEnabled(true);
             caps.setCapability(ChromeOptions.CAPABILITY, options);
+            driver = new ChromeDriver(caps);
             Logger.Output(LogType.LogTypeName.INFO, "正在启动Chrome浏览器"); 
         }else if(browserName.equalsIgnoreCase("IE")){  
               
