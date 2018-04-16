@@ -19,7 +19,7 @@
 	<dependency>
     <groupId>org.testng</groupId>
     <artifactId>testng</artifactId>
-    <version>6.14.2</version>
+    <version>6.14.3</version>
     <scope>test</scope>
 	</dependency>
  	 
@@ -130,6 +130,12 @@
                         <suiteXmlFile>suites/testng.xml</suiteXmlFile>
                        <!--此处testng.xml即为要运行的testng.xml文件-->
                     </suiteXmlFiles>
+                    <properties>
+                    	<property>
+                    		<name>usedefaultlisteners</name>
+							<value>true</value>
+                    	</property>
+                    </properties>
                 </configuration>
             </plugin>
             
