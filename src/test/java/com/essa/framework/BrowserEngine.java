@@ -3,8 +3,6 @@ package com.essa.framework;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
@@ -52,12 +50,11 @@ public class BrowserEngine {
             driver= new ChromeDriver();  
             Logger.Output(LogType.LogTypeName.INFO, "正在启动Chrome浏览器");  
             */
-    		List<String> args = new ArrayList<>();
-    		args.add("--no-sandbox");
-            args.add("--headless");
-            args.add("--disable-gpu");
             ChromeOptions options = new ChromeOptions();
-            options.addArguments(args);
+            options.addArguments("--no-sandbox");
+            options.addArguments("--headless");
+            options.addArguments("--disable-gpu");
+            options.addArguments("--window-size=1920,1080");
             driver = new ChromeDriver(options);
         }
     	 /*
