@@ -3,7 +3,9 @@ package com.essa.framework;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
@@ -48,16 +50,26 @@ public class BrowserEngine {
               
         }
     	else if(browserName.equals("Chrome")){ 
-            System.setProperty("webdriver.chrome.driver", ".//src//main//resources//chromedriver");  
+           /*
+    		System.setProperty("webdriver.chrome.driver", ".//src//main//resources//chromedriver");  
             driver= new ChromeDriver();  
             Logger.Output(LogType.LogTypeName.INFO, "正在启动Chrome浏览器");  
+            */
+    		List<String> args = new ArrayList<>();
+    		args.add("--no-sandbox");
+            args.add("--headless");
+            args.add("--disable-gpu");
+            ChromeOptions options = new ChromeOptions();
+            options.addArguments(args);
+            driver = new ChromeDriver(options);
         }
-    	 
+    	 /*
     	driver.manage().window().maximize();  
         Logger.Output(LogType.LogTypeName.INFO, "窗口最大化");
+        */
         driver.get(serverURL);  
         Logger.Output(LogType.LogTypeName.INFO, "打开URL: "+ serverURL);  
-        callWait(5);  
+        callWait(25);  
         return driver;  
     }  
       
