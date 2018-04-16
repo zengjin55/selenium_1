@@ -24,7 +24,7 @@ public class Logger {
         try {  
                   
                     // 定义日志文件保存路径和日志文件名称  
-                logFileName = ".//Log" + "//" + OutputFileName + ".log";  
+                logFileName = "./Log" + "/" + OutputFileName + ".log";  
                 if (outputStreamWriter == null) {  
                     File logFile = new File(logFileName);  
                   
