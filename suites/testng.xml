@@ -2,10 +2,9 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="bpms自动化测试">
 	<listeners>
-        <!-- 设置监听，测试完毕后会发送测试报告至qq邮箱 
-		<listener class-name="com.essa.framework.ListenerSuite"/>
-		-->
-	</listeners>
+        <listener class-name="org.uncommons.reportng.HTMLReporter" />
+        <listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
+    </listeners>
 	
 	<test name="login">
 		<classes>
