@@ -48,25 +48,13 @@ public class BrowserEngine {
               
         }
     	else if(browserName.equals("Chrome")){ 
-    		/*
             System.setProperty("webdriver.chrome.driver", ".//src//main//resources//chromedriver");  
             driver= new ChromeDriver();  
             Logger.Output(LogType.LogTypeName.INFO, "正在启动Chrome浏览器");  
-             */
-    		//File file = new File(".//src//main//resources//chromedriver");
-    		ChromeOptions chromeOptions = new ChromeOptions();
-    		chromeOptions.addArguments("--headless");
-    		chromeOptions.addArguments("--disable-gpu");
-    		chromeOptions.addArguments("--window-size=1920,1080");
-    		System.setProperty("webdriver.chrome.driver",".//src//main//resources//chromedriver");
-    		driver = new ChromeDriver(chromeOptions);
-            Logger.Output(LogType.LogTypeName.INFO, "正在启动Chrome浏览器");  
         }
     	 
-        /*
     	driver.manage().window().maximize();  
         Logger.Output(LogType.LogTypeName.INFO, "窗口最大化");
-        */
         driver.get(serverURL);  
         Logger.Output(LogType.LogTypeName.INFO, "打开URL: "+ serverURL);  
         callWait(5);  
