@@ -97,7 +97,7 @@
     <version>1.3.2</version>
 	</dependency>
 	
-	<!-- reportNg的依赖包 关联testNg ，这个包的主要作用就是对testng原生报告的美化-->
+	<!-- reportNg的依赖包 关联testNg ，这个包的主要作用就是对testng原生报告的美化
         <dependency>
             <groupId>org.uncommons</groupId>
             <artifactId>reportng</artifactId>
@@ -114,7 +114,7 @@
             <artifactId>guice</artifactId>
             <version>4.0-beta5</version>
         </dependency>
-	
+	-->
   </dependencies>
   
    <build>
