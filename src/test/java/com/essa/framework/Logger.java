@@ -20,7 +20,7 @@ public class Logger {
     }  
   
     private static void WriteLog(String logEntry) {  
-  
+    	/*
         try {  
                   
                     // 定义日志文件保存路径和日志文件名称  
@@ -41,6 +41,7 @@ public class Logger {
             e.printStackTrace();  
   
         }  
+        */
   
     }  
   
