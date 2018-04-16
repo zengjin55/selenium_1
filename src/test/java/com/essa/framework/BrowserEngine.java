@@ -1,13 +1,20 @@
 package com.essa.framework;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeDriverService;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.ie.InternetExplorerDriver;
@@ -35,7 +42,7 @@ public class BrowserEngine {
         ips.close();  
     }  
       
-    public WebDriver getBrowser(){  
+    public WebDriver getBrowser() throws IOException{  
         
     	if(browserName.equalsIgnoreCase("Firefox")){  
         	
@@ -44,19 +51,39 @@ public class BrowserEngine {
             Logger.Output(LogType.LogTypeName.INFO, "正在启动FireFox浏览器");  
               
         }
-    	else if(browserName.equals("Chrome")){  
+    	else if(browserName.equals("Chrome")){ 
+    		/*
             System.setProperty("webdriver.chrome.driver", ".//src//main//resources//chromedriver");  
             driver= new ChromeDriver();  
             Logger.Output(LogType.LogTypeName.INFO, "正在启动Chrome浏览器");  
-              
+             */
+    		//File file = new File(".//src//main//resources//chromedriver");
+    		String DRIVER_PATH = ".//src//main//resources//chromedriver";
+    		DesiredCapabilities caps = DesiredCapabilities.chrome();
+    		System.setProperty("webdriver.chrome.driver",".//src//main//resources//chromedriver");
+    		ChromeOptions options = new ChromeOptions();
+    		options.setBinary(DRIVER_PATH);
+    		System.setProperty("webdriver.chrome.driver", DRIVER_PATH);
+    		options.addArguments("test-type"); //ignore certificate errors
+            options.addArguments("headless");// headless mode
+            options.addArguments("disable-gpu"); 
+            Map<String, Object> prefs = new HashMap<String, Object>();
+        	prefs.put("profile.managed_default_content_settings.images",2); 
+        	options.setExperimentalOption("prefs", prefs);
+        	caps.setJavascriptEnabled(true);
+            caps.setCapability(ChromeOptions.CAPABILITY, options);
+            Logger.Output(LogType.LogTypeName.INFO, "正在启动Chrome浏览器"); 
         }else if(browserName.equalsIgnoreCase("IE")){  
               
             System.setProperty("webdriver.ie.driver", ".//src//main//resources//IEDriverServer.exe");  
             driver= new InternetExplorerDriver();  
             Logger.Output(LogType.LogTypeName.INFO, "正在启动IE浏览器");  
         }
+    	 
+        /*
     	driver.manage().window().maximize();  
         Logger.Output(LogType.LogTypeName.INFO, "窗口最大化");
+        */
         driver.get(serverURL);  
         Logger.Output(LogType.LogTypeName.INFO, "打开URL: "+ serverURL);  
         callWait(5);  
