@@ -56,6 +56,7 @@ public class BrowserEngine {
             options.addArguments("--disable-gpu");
             options.addArguments("--window-size=1920,1080");
             driver = new ChromeDriver(options);
+            Logger.Output(LogType.LogTypeName.INFO, "正在启动Chrome浏览器");
         }
     	 /*
     	driver.manage().window().maximize();  
@@ -63,7 +64,7 @@ public class BrowserEngine {
         */
         driver.get(serverURL);  
         Logger.Output(LogType.LogTypeName.INFO, "打开URL: "+ serverURL);  
-        callWait(25);  
+        callWait(10);  
         return driver;  
     }  
       
