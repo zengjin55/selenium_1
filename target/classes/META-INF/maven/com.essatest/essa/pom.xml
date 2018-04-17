@@ -19,48 +19,16 @@
 	<dependency>
     <groupId>org.testng</groupId>
     <artifactId>testng</artifactId>
-    <version>6.14.3</version>
+    <version>6.11</version>
     <scope>test</scope>
 	</dependency>
- 	 
- 	 <dependency>
+	
+<dependency>
     <groupId>org.seleniumhq.selenium</groupId>
     <artifactId>selenium-java</artifactId>
     <version>3.11.0</version>
-	</dependency>
- 	 
-  
-  <dependency>
-    <groupId>org.seleniumhq.selenium</groupId>
-    <artifactId>selenium-firefox-driver</artifactId>
-    <version>3.11.0</version>
-  </dependency>
-
-  <dependency>
-    <groupId>org.seleniumhq.selenium</groupId>
-    <artifactId>selenium-chrome-driver</artifactId>
-    <version>3.11.0</version>
-  </dependency>
-
-  <dependency>
-    <groupId>org.seleniumhq.selenium</groupId>
-    <artifactId>selenium-safari-driver</artifactId>
-    <version>3.11.0</version>
-  </dependency>
-
-  <dependency>
-    <groupId>org.seleniumhq.selenium</groupId>
-    <artifactId>selenium-ie-driver</artifactId>
-    <version>3.11.0</version>
-  </dependency>
-
-
-  	<dependency>
-    <groupId>org.seleniumhq.selenium</groupId>
-    <artifactId>selenium-support</artifactId>
-    <version>2.46.0</version>
-  	</dependency>
-
+</dependency>
+ 
 	<dependency>
     <groupId>javax.mail</groupId>
     <artifactId>mail</artifactId>
@@ -97,27 +65,41 @@
     <version>1.3.2</version>
 	</dependency>
 	
-	<!-- reportNg的依赖包 关联testNg ，这个包的主要作用就是对testng原生报告的美化
-        <dependency>
-            <groupId>org.uncommons</groupId>
-            <artifactId>reportng</artifactId>
-            <version>1.1.4</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.testng</groupId>
-                    <artifactId>testng</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-       -->
         <dependency>
             <groupId>com.google.inject</groupId>
             <artifactId>guice</artifactId>
             <version>4.0</version>
         </dependency>
+     <!-- 依赖reportNg 关联testNg -->
+
+<dependency>
+	<groupId>org.uncommons</groupId>
+	<artifactId>reportng</artifactId>
+	<version>1.1.4</version>
+	<scope>test</scope>
+	<exclusions>
+		<exclusion>
+			<groupId>org.testng</groupId>
+			<artifactId>testng</artifactId>
+		</exclusion>
+	</exclusions>
+</dependency>
+	
+	<!-- 依赖Guice -->
+
+<dependency>
+	<groupId>com.google.inject</groupId>
+	<artifactId>guice</artifactId>
+	<version>4.0</version>
+	<scope>test</scope>
+</dependency>
+	<dependency>
+		<groupId>velocity</groupId>
+		<artifactId>velocity-dep</artifactId>
+		<version>1.4</version>
+	</dependency>
 	
   </dependencies>
-  
    <build>
         <plugins>
             <plugin>
@@ -130,36 +112,29 @@
                         <suiteXmlFile>suites/testng.xml</suiteXmlFile>
                        <!--此处testng.xml即为要运行的testng.xml文件-->
                     </suiteXmlFiles>
-                    <properties>
-                    	<property>
-                    		<name>usedefaultlisteners</name>
-							<value>true</value>
-                    	</property>
-                    </properties>
                 </configuration>
             </plugin>
-            
-            <!-- 添加插件,添加ReportNg的监听器，修改最后的TestNg的报告 
 
 	<plugin>
-	<groupId>org.apache.maven.plugins</groupId>
-	<artifactId>maven-surefire-plugin</artifactId>
-	<version>2.5</version>
-	<configuration>
-		<properties>
-			<property>
-				<name>usedefaultlisteners</name>
-				<value>false</value>
-			</property>
-			<property>
-				<name>listener</name>
-				<value>org.uncommons.reportng.HTMLReporter,
-					org.uncommons.reportng.JUnitXMLReporter</value>
-			</property>
-		</properties>
-	</configuration>
+		<groupId>org.apache.maven.plugins</groupId>
+		<artifactId>maven-surefire-plugin</artifactId>
+		<version>2.5</version>
+		<configuration>
+			<properties>
+				<property>
+					<name>usedefaultlisteners</name>
+					<value>false</value>
+				</property>
+				<property>
+					<name>listener</name>
+					<value>org.uncommons.reportng.HTMLReporter,
+						org.uncommons.reportng.JUnitXMLReporter</value>
+				</property>
+			</properties>
+			<workingDirectory>target/</workingDirectory>
+			<forkMode>always</forkMode>
+		</configuration>
 	</plugin>
-	-->
         </plugins>
     </build>
     
