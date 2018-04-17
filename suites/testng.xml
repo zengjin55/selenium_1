@@ -3,7 +3,6 @@
 <suite name="bpms自动化测试">
   
 	<listeners>
-		<listener class-name="com.essa.framework.generateReport1" />
         <listener class-name="org.uncommons.reportng.HTMLReporter" />
         <listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
     </listeners>
